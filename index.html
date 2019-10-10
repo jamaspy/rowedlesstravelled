@@ -16,12 +16,22 @@
 			href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.4.0/mapbox-gl.css"
 			rel="stylesheet"
 		/>
+		<link
+			href="https://fonts.googleapis.com/css?family=Raleway:400&display=swap"
+			rel="stylesheet"
+		/>
+		/>
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+			crossorigin="anonymous"
+		/>
 		<style>
 			body {
 				margin: 0;
 				padding: 0;
-				font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-					"Lucida Sans", Arial, sans-serif;
+				font-family: "Raleway", sans-serif;
 			}
 
 			#map {
@@ -40,7 +50,7 @@
 			}
 			#info {
 				position: absolute;
-				top: 0;
+
 				bottom: 0;
 				right: 0;
 				width: 20%;
@@ -60,11 +70,19 @@
 		<div id="logo">
 			<img src="taliskerLogo.jpg" alt="taliskerwhiskyatlanticchallenge-logo" />
 		</div>
-		<!-- <div id="info">
-			<p>Distance Remaining: 4,800km</p>
-			<p>Distance Rowed: 4,800km</p>
-			<p>Distance From Land: 4,800km</p>
-		</div> -->
+		<div id="info">
+			<div class="card mb-5 " style="width: 18rem;">
+				<ul class="list-group list-group-flush ">
+					<li class="list-group-item ">
+						Distance Remaining: 4,800km
+					</li>
+					<li class="list-group-item">Distance Rowed: 0,000km</li>
+					<li class="list-group-item ">
+						Days At Sea: 0 Days
+					</li>
+				</ul>
+			</div>
+		</div>
 		<div id="map"></div>
 
 		<script>
@@ -75,14 +93,60 @@
 				container: "map",
 				style: "mapbox://styles/mapbox/light-v10",
 				center: [-41, 34],
+				pitch: 0, // pitch in degrees
 				zoom: 3.5
 			});
 
+			// Finish Line Marker
 			var marker = new mapboxgl.Marker()
 				.setLngLat([-61.764112, 17.008703])
 				.addTo(map);
 
-			// code from the next step will go here!
+			// Add Line For Rouet
+			// map.on("load", function() {
+			// 	map.addLayer({
+			// 		id: "route",
+			// 		type: "line",
+			// 		source: {
+			// 			type: "geojson",
+			// 			data: {
+			// 				type: "Feature",
+			// 				properties: {},
+			// 				geometry: {
+			// 					type: "LineString",
+			// 					coordinates: [
+			// 						[-17.109205, 28.0884],
+			// 						[-17.111425, 28.082612],
+			// 						[-17.112393, 28.074909],
+			// 						[-17.11689, 28.070301],
+			// 						[-17.125014, 28.052886],
+			// 						[-17.162254, 28.012556],
+			// 						[-17.938026, 27.413079],
+			// 						[-41.754426, 19.189353],
+			// 						[-61.75478, 16.994406],
+			// 						[-61.759508, 16.997506],
+			// 						[-61.763134, 17.000901],
+			// 						[-61.761378, 17.003597],
+			// 						[-61.762477, 17.005337],
+			// 						[-61.763751, 17.006675],
+			// 						[-61.763772, 17.007968],
+			// 						[-61.764112, 17.008703]
+			// 					]
+			// 				}
+			// 			}
+			// 		},
+			// 		layout: {
+			// 			"line-join": "round",
+			// 			"line-cap": "round"
+			// 		},
+			// 		paint: {
+			// 			"line-color": "#888",
+			// 			"line-width": 2
+			// 		}
+			// 	});
+			//});
+
+			// Start Line
 			var geojson = {
 				type: "FeatureCollection",
 				features: [
