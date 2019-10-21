@@ -12,6 +12,7 @@
 			rel="stylesheet"
 		/>
 		<script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.4.0/mapbox-gl.js"></script>
+		<script src="distanceCalc.js"></script>
 		<link
 			href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.4.0/mapbox-gl.css"
 			rel="stylesheet"
@@ -74,14 +75,80 @@
 			<div class="card mb-5 " style="width: 18rem;">
 				<ul class="list-group list-group-flush ">
 					<li class="list-group-item bg-dark text-light ">
-						Distance Remaining: 4,800km
+						Distance Remaining: 4,492.3km
 					</li>
 					<li class="list-group-item bg-dark text-light">
-						Distance Rowed: 0,000km
+						Distance Rowed: 307.7km
 					</li>
 					<li class="list-group-item bg-dark text-light ">
-						Days At Sea: 0 Days
+						Days At Sea: 4 Days
 					</li>
+					<!-- <li class="list-group-item bg-dark text-light ">
+						Anamaria Macavei
+					</li>
+					<li class="list-group-item bg-dark text-light ">
+						Anna Tabas
+					</li>
+					<li class="list-group-item bg-dark text-light ">
+						Bruno Oliveira
+					</li>
+					<li class="list-group-item bg-dark text-light ">
+						Charlotte Osborne
+					</li>
+					<li class="list-group-item bg-dark text-light ">
+						Chris Macleod
+					</li>
+					<li class="list-group-item bg-dark text-light ">
+						Dalen Anzilotti
+					</li>
+					<li class="list-group-item bg-dark text-light ">
+						Danielle Ferguson
+					</li>
+					<li class="list-group-item bg-dark text-light ">
+						Dean Staples
+					</li>
+					<li class="list-group-item bg-dark text-light ">
+						Derek Macartney
+					</li>
+					<li class="list-group-item bg-dark text-light ">
+						Emma Berry
+					</li>
+					<li class="list-group-item bg-dark text-light ">
+						Jacob Kenney
+					</li>
+					<li class="list-group-item bg-dark text-light ">
+						James Gormley
+					</li>
+					<li class="list-group-item bg-dark text-light ">
+						Jeremy Corbet
+					</li>
+					<li class="list-group-item bg-dark text-light ">
+						Kylie Clark
+					</li>
+					<li class="list-group-item bg-dark text-light ">
+						Liam Connolly
+					</li>
+					<li class="list-group-item bg-dark text-light ">
+						Lyann Luu
+					</li>
+					<li class="list-group-item bg-dark text-light ">
+						Matthew Angell
+					</li>
+					<li class="list-group-item bg-dark text-light ">
+						Rachel Exton
+					</li>
+					<li class="list-group-item bg-dark text-light ">
+						Raj Sharif
+					</li>
+					<li class="list-group-item bg-dark text-light ">
+						Ross Hibbert
+					</li>
+					<li class="list-group-item bg-dark text-light ">
+						Vinicius Botelho
+					</li>
+					<li class="list-group-item bg-dark text-light ">
+						Yvette Harris
+					</li> -->
 				</ul>
 			</div>
 		</div>
@@ -102,6 +169,9 @@
 			// Finish Line Marker
 			var marker = new mapboxgl.Marker()
 				.setLngLat([-61.764112, 17.008703])
+				.addTo(map);
+			var marker = new mapboxgl.Marker()
+				.setLngLat([-17.109205, 28.0884])
 				.addTo(map);
 
 			// Add Line For Rouet
@@ -156,7 +226,7 @@
 						type: "Feature",
 						geometry: {
 							type: "Point",
-							coordinates: [-17.109205, 28.0884]
+							coordinates: [-19.92666667, 27.29611111]
 						},
 						properties: {
 							title: "Start",
