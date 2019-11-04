@@ -75,80 +75,14 @@
 			<div class="card mb-5 " style="width: 18rem;">
 				<ul class="list-group list-group-flush ">
 					<li class="list-group-item bg-dark text-light ">
-						Distance Remaining: 4,692.3km
+						Distance Remaining: 4,146km
 					</li>
 					<li class="list-group-item bg-dark text-light">
-						Distance Rowed: 307.7km
+						Distance Rowed: 853.7km
 					</li>
 					<li class="list-group-item bg-dark text-light ">
-						Days At Sea: 4 Days
+						Days At Sea: 14 Days
 					</li>
-					<!-- <li class="list-group-item bg-dark text-light ">
-						Anamaria Macavei
-					</li>
-					<li class="list-group-item bg-dark text-light ">
-						Anna Tabas
-					</li>
-					<li class="list-group-item bg-dark text-light ">
-						Bruno Oliveira
-					</li>
-					<li class="list-group-item bg-dark text-light ">
-						Charlotte Osborne
-					</li>
-					<li class="list-group-item bg-dark text-light ">
-						Chris Macleod
-					</li>
-					<li class="list-group-item bg-dark text-light ">
-						Dalen Anzilotti
-					</li>
-					<li class="list-group-item bg-dark text-light ">
-						Danielle Ferguson
-					</li>
-					<li class="list-group-item bg-dark text-light ">
-						Dean Staples
-					</li>
-					<li class="list-group-item bg-dark text-light ">
-						Derek Macartney
-					</li>
-					<li class="list-group-item bg-dark text-light ">
-						Emma Berry
-					</li>
-					<li class="list-group-item bg-dark text-light ">
-						Jacob Kenney
-					</li>
-					<li class="list-group-item bg-dark text-light ">
-						James Gormley
-					</li>
-					<li class="list-group-item bg-dark text-light ">
-						Jeremy Corbet
-					</li>
-					<li class="list-group-item bg-dark text-light ">
-						Kylie Clark
-					</li>
-					<li class="list-group-item bg-dark text-light ">
-						Liam Connolly
-					</li>
-					<li class="list-group-item bg-dark text-light ">
-						Lyann Luu
-					</li>
-					<li class="list-group-item bg-dark text-light ">
-						Matthew Angell
-					</li>
-					<li class="list-group-item bg-dark text-light ">
-						Rachel Exton
-					</li>
-					<li class="list-group-item bg-dark text-light ">
-						Raj Sharif
-					</li>
-					<li class="list-group-item bg-dark text-light ">
-						Ross Hibbert
-					</li>
-					<li class="list-group-item bg-dark text-light ">
-						Vinicius Botelho
-					</li>
-					<li class="list-group-item bg-dark text-light ">
-						Yvette Harris
-					</li> -->
 				</ul>
 			</div>
 		</div>
@@ -170,55 +104,12 @@
 			var marker = new mapboxgl.Marker()
 				.setLngLat([-61.764112, 17.008703])
 				.addTo(map);
+			//Start Line Marker
 			var marker = new mapboxgl.Marker()
 				.setLngLat([-17.109205, 28.0884])
 				.addTo(map);
 
-			// Add Line For Rouet
-			// map.on("load", function() {
-			// 	map.addLayer({
-			// 		id: "route",
-			// 		type: "line",
-			// 		source: {
-			// 			type: "geojson",
-			// 			data: {
-			// 				type: "Feature",
-			// 				properties: {},
-			// 				geometry: {
-			// 					type: "LineString",
-			// 					coordinates: [
-			// 						[-17.109205, 28.0884],
-			// 						[-17.111425, 28.082612],
-			// 						[-17.112393, 28.074909],
-			// 						[-17.11689, 28.070301],
-			// 						[-17.125014, 28.052886],
-			// 						[-17.162254, 28.012556],
-			// 						[-17.938026, 27.413079],
-			// 						[-41.754426, 19.189353],
-			// 						[-61.75478, 16.994406],
-			// 						[-61.759508, 16.997506],
-			// 						[-61.763134, 17.000901],
-			// 						[-61.761378, 17.003597],
-			// 						[-61.762477, 17.005337],
-			// 						[-61.763751, 17.006675],
-			// 						[-61.763772, 17.007968],
-			// 						[-61.764112, 17.008703]
-			// 					]
-			// 				}
-			// 			}
-			// 		},
-			// 		layout: {
-			// 			"line-join": "round",
-			// 			"line-cap": "round"
-			// 		},
-			// 		paint: {
-			// 			"line-color": "#888",
-			// 			"line-width": 2
-			// 		}
-			// 	});
-			//});
-
-			// Start Line
+			// Preacta Marker
 			var geojson = {
 				type: "FeatureCollection",
 				features: [
@@ -226,24 +117,13 @@
 						type: "Feature",
 						geometry: {
 							type: "Point",
-							coordinates: [-19.92666667, 27.29611111]
+							coordinates: [-24.22611111, 26.615]
 						},
 						properties: {
 							title: "Start",
 							description: "SAN SEBASTIAN, LA GOMERA"
 						}
 					}
-					// {
-					// 	type: "Feature",
-					// 	geometry: {
-					// 		type: "Point",
-					// 		coordinates: [-61.764112, 17.008703]
-					// 	},
-					// 	properties: {
-					// 		title: "Finish",
-					// 		description: "ENGLISH HARBOUR, ANTIGUA & BARBUDA "
-					// 	}
-					// }
 				]
 			};
 			// add markers to map
