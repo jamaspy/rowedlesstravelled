@@ -1,142 +1,142 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<title>PREACTA | Rowed Less Traveled</title>
-		<meta
-			name="viewport"
-			content="initial-scale=1,maximum-scale=1,user-scalable=no"
-		/>
-		<link
-			href="https://fonts.googleapis.com/css?family=Open+Sans"
-			rel="stylesheet"
-		/>
-		<script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.4.0/mapbox-gl.js"></script>
-		<script src="distanceCalc.js"></script>
-		<link
-			href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.4.0/mapbox-gl.css"
-			rel="stylesheet"
-		/>
-		<link
-			href="https://fonts.googleapis.com/css?family=Raleway:400&display=swap"
-			rel="stylesheet"
-		/>
-		/>
-		<link
-			rel="stylesheet"
-			href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-			crossorigin="anonymous"
-		/>
-		<style>
-			body {
-				margin: 0;
-				padding: 0;
-				font-family: "Raleway", sans-serif;
-			}
+  <head>
+    <meta charset="utf-8" />
+    <title>PREACTA | Rowed Less Traveled</title>
+    <meta
+      name="viewport"
+      content="initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+    />
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.4.0/mapbox-gl.js"></script>
+    <script src="distanceCalc.js"></script>
+    <link
+      href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.4.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:400&display=swap"
+      rel="stylesheet"
+    />
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Raleway", sans-serif;
+      }
 
-			#map {
-				position: absolute;
-				top: 0;
-				bottom: 0;
-				width: 100%;
-				z-index: 0;
-			}
-			#logo {
-				position: absolute;
-				top: 0;
-				bottom: 0;
-				width: 10%;
-				z-index: 999;
-			}
-			#info {
-				position: absolute;
+      #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        z-index: 0;
+      }
+      #logo {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 10%;
+        z-index: 999;
+      }
+      #info {
+        position: absolute;
 
-				bottom: 0;
-				right: 0;
-				width: 20%;
-				z-index: 9999;
-			}
-			.marker {
-				background-image: url("icon.png");
-				background-size: cover;
-				width: 50px;
-				height: 50px;
-				border-radius: 50%;
-				cursor: pointer;
-			}
-		</style>
-	</head>
-	<body>
-		<div id="logo">
-			<img src="taliskerLogo.jpg" alt="taliskerwhiskyatlanticchallenge-logo" />
-		</div>
-		<div id="info">
-			<div class="card mb-5 " style="width: 18rem;">
-				<ul class="list-group list-group-flush ">
-					<li class="list-group-item bg-dark text-light ">
-						Distance Remaining: 3,410km
-					</li>
-					<li class="list-group-item bg-dark text-light">
-						Distance Rowed: 1,590km
-					</li>
-					<li class="list-group-item bg-dark text-light ">
-						Days At Sea: 28 Days
-					</li>
-				</ul>
-			</div>
-		</div>
-		<div id="map"></div>
+        bottom: 0;
+        right: 0;
+        width: 20%;
+        z-index: 9999;
+      }
+      .marker {
+        background-image: url("icon.png");
+        background-size: cover;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="logo">
+      <img src="taliskerLogo.jpg" alt="taliskerwhiskyatlanticchallenge-logo" />
+    </div>
+    <div id="info">
+      <div class="card mb-5 " style="width: 18rem;">
+        <ul class="list-group list-group-flush ">
+          <li class="list-group-item bg-dark text-light ">
+            Distance Remaining: 3,410km
+          </li>
+          <li class="list-group-item bg-dark text-light">
+            Distance Rowed: 1,590km
+          </li>
+          <li class="list-group-item bg-dark text-light ">
+            Days At Sea: 28 Days
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="map"></div>
 
-		<script>
-			mapboxgl.accessToken =
-				"pk.eyJ1IjoiamFtYXNweSIsImEiOiJjazFjbjB4ZG4wMWV4M2NwZjhkeDdlMG14In0.58d2IqSfCbu__4edLZN3gQ";
+    <script>
+      mapboxgl.accessToken =
+        "pk.eyJ1IjoiamFtYXNweSIsImEiOiJjazFjbjB4ZG4wMWV4M2NwZjhkeDdlMG14In0.58d2IqSfCbu__4edLZN3gQ";
 
-			var map = new mapboxgl.Map({
-				container: "map",
-				style: "mapbox://styles/mapbox/light-v10",
-				center: [-41, 34],
-				pitch: 0, // pitch in degrees
-				zoom: 3.5
-			});
+      var map = new mapboxgl.Map({
+        container: "map",
+        style: "mapbox://styles/mapbox/light-v10",
+        center: [-41, 34],
+        pitch: 0, // pitch in degrees
+        zoom: 3.5
+      });
 
-			// Finish Line Marker
-			var marker = new mapboxgl.Marker()
-				.setLngLat([-61.764112, 17.008703])
-				.addTo(map);
-			//Start Line Marker
-			var marker = new mapboxgl.Marker()
-				.setLngLat([-17.109205, 28.0884])
-				.addTo(map);
+      // Finish Line Marker
+      var marker = new mapboxgl.Marker()
+        .setLngLat([-61.764112, 17.008703])
+        .addTo(map);
+      //Start Line Marker
+      var marker = new mapboxgl.Marker()
+        .setLngLat([-17.109205, 28.0884])
+        .addTo(map);
 
-			// Preacta Marker
-			var geojson = {
-				type: "FeatureCollection",
-				features: [
-					{
-						type: "Feature",
-						geometry: {
-							type: "Point",
-							coordinates: [-24.86611111, 26.615]
-						},
-						properties: {
-							title: "Start",
-							description: "SAN SEBASTIAN, LA GOMERA"
-						}
-					}
-				]
-			};
-			// add markers to map
-			geojson.features.forEach(function(marker) {
-				// create a HTML element for each feature
-				var el = document.createElement("div");
-				el.className = "marker";
+      // Preacta Marker
+      var geojson = {
+        type: "FeatureCollection",
+        features: [
+          {
+            type: "Feature",
+            geometry: {
+              type: "Point",
+              coordinates: [-31.86611111, 23.615]
+            },
+            properties: {
+              title: "Start",
+              description: "SAN SEBASTIAN, LA GOMERA"
+            }
+          }
+        ]
+      };
+      // add markers to map
+      geojson.features.forEach(function(marker) {
+        // create a HTML element for each feature
+        var el = document.createElement("div");
+        el.className = "marker";
 
-				// make a marker for each feature and add to the map
-				new mapboxgl.Marker(el)
-					.setLngLat(marker.geometry.coordinates)
-					.addTo(map);
-			});
-		</script>
-	</body>
+        // make a marker for each feature and add to the map
+        new mapboxgl.Marker(el)
+          .setLngLat(marker.geometry.coordinates)
+          .addTo(map);
+      });
+    </script>
+  </body>
 </html>
